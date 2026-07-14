@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager as fm
 import seaborn as sns
 import streamlit as st
-import itertools
+
 
 
 pd.options.mode.copy_on_write = True
@@ -35,6 +35,10 @@ st.sidebar.header("")
 st.sidebar.subheader("輸入準則：")
 maximum_acceleration = st.sidebar.number_input("允許的最大加速度[m/s^2]", value=1, placeholder="Type a number...")
 maximum_jerk = st.sidebar.number_input("允許的最大加加速(Jerk)[m/s^3]", value=0.6, placeholder="Type a number...")
+st.sidebar.header("")
+st.sidebar.header("")
+st.sidebar.write("參考資料：")
+st.sidebar.write("UCL(倫敦大學學院)，高齡乘客無障礙運輸研究，https://discovery.ucl.ac.uk/id/eprint/10120841/1/Karekla_OperationalBusCharacteristics_Accepted.pdf")
 
 st.write("可自行上傳具有日期時間及車速資料之檔案(.xlsx)。")
 st.write("檔案首列(row)為「日期時間」及「車速」兩欄位名稱, 其餘列的內容為數字。")
