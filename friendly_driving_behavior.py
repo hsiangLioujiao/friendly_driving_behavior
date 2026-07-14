@@ -34,13 +34,13 @@ st.sidebar.header("")
 st.sidebar.header("")
 st.sidebar.subheader("輸入準則：")
 maximum_acceleration = st.sidebar.number_input("允許的最大加速度[m/s^2]", value=1, placeholder="Type a number...")
-maximum_jerk = st.sidebar.number_input("允許的最大加加速度(Jerk)[m/s^3]", value=0.6, placeholder="Type a number...")
+maximum_jerk = st.sidebar.number_input("允許的最大加加速(Jerk)[m/s^3]", value=0.6, placeholder="Type a number...")
 
 st.write("可自行上傳具有日期時間及車速資料之檔案(.xlsx)。")
 st.write("檔案首列(row)為「日期時間」及「車速」兩欄位名稱, 其餘列的內容為數字。")
 st.write("日期時間資料為datetime64[ns]格式，車速資料的單位為km/h。")
 st.write("")
-uploaded_file=st.file_uploader("選擇上傳檔案：", type=".csv") 
+uploaded_file=st.file_uploader("選擇上傳檔案：", type=".xlsx") 
 st.write("")
 
 data_correctness = False
