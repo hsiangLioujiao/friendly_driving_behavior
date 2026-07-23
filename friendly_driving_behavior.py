@@ -67,7 +67,8 @@ if data_correctness:
     df["dt[s]"] = df["日期時間"].diff().dt.total_seconds() # 時間差
     df["dV[m/s]"] = df["車速"].diff() / 3.6 # 速度差
     df["加速度"] = df["dV[m/s]"] / df["dt[s]"]
-    df["加加速"] = df["加速度"] / df["dt[s]"]
+    df["da[m/s^2]"] = df["加速度"].diff()
+    df["加加速"] = df["da[m/s^2]"] / df["dt[s]"]
     styled_df = df[['車速', '加速度', '加加速']].describe().style\
         .set_properties(**{
             'font-size': '18px',
